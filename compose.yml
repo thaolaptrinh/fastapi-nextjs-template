@@ -1,7 +1,7 @@
 services:
 
   db:
-    image: mysql:8.0
+    image: mysql:9.6
     restart: always
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${MYSQL_PASSWORD?Variable not set}"]
