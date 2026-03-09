@@ -21,7 +21,7 @@ export function useLogin() {
       })
       // Cookie is set automatically. Refetch user to update auth state.
       await queryClient.invalidateQueries({ queryKey: ["me"] })
-      const { data } = await queryClient.fetchQuery({
+      const data = await queryClient.fetchQuery({
         queryKey: ["me"],
         queryFn: async () => {
           const { data } = await users.getMe()
